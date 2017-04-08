@@ -8,6 +8,7 @@ autocmd InsertLeave * :set relativenumber
 	set nocompatible
 	set backspace=indent,eol,start
 
+	set showcmd
 
 	if has("vms")
 	  set nobackup
@@ -15,5 +16,11 @@ autocmd InsertLeave * :set relativenumber
 	  set backup
 	endif
 
+	set ruler
+	set history=50
 
-
+	if &t_Co > 2 || has("gui_running")
+	  syntax on
+	  set hlsearch
+	endif
+	filetype plugin indent on
